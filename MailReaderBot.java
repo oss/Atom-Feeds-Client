@@ -1,5 +1,6 @@
 import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import java.net.HttpURLConnection;
+import javax.net.ssl.HttpsURLConnection;
 import java.net.URL;
 import java.io.*;
 import java.util.Scanner;
@@ -11,6 +12,22 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.sax.SAXSource;
 import javax.xml.transform.sax.SAXTransformerFactory;
 import javax.xml.transform.stream.StreamResult;
+
+//OAuth Import Requirements
+//import com.google.api.client.auth.oauth2.Credential;
+//import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
+//import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeRequestUrl;
+//import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
+//import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
+//import com.google.api.client.http.HttpTransport;
+//import com.google.api.client.http.javanet.NetHttpTransport;
+//import com.google.api.client.json.jackson.JacksonFactory;
+//import com.google.api.services.oauth2.Oauth2;
+//import com.google.api.services.oauth2.model.Userinfo;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 import org.xml.sax.InputSource;
 
@@ -49,7 +66,7 @@ public class MailReaderBot {
 
     }
 
-    public static String formatXml(String xml){
+    private static String formatXml(String xml){
         try{
             Transformer serializer= SAXTransformerFactory.newInstance().newTransformer();
             serializer.setOutputProperty(OutputKeys.INDENT, "yes");
@@ -66,5 +83,58 @@ public class MailReaderBot {
         }
     }
 
+//    // HTTP POST request
+//    private void sendPost() throws Exception {
+// 
+//        //String url = "https://selfsolve.apple.com/wcResults.do";
+//        String url = "https://api.oauth2server.com/token";
+//        String CLIENT_PASSWORD = "notasecret";
+//        String USERNAME = username;
+//        String PASSWORD = password;
+//        String CLIENT_ID = "";
+//        URL obj = new URL(url);
+//        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
+// 
+//        //add reuqest header
+//        con.setRequestMethod("POST");
+//        con.setRequestProperty("grant_type", CLIENT_PASSWORD);
+//        con.setRequestProperty("username", USERNAME);
+//        con.setRequestProperty("password",PASSWORD);
+//        con.setRequestProperty("client_id",CLIENT_ID);
+// 
+//        //String urlParameters = "sn=C02G8416DRJM&cn=&locale=&caller=&num=12345";
+// 
+//        // Send post request
+//        con.setDoOutput(true);
+//        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+//        wr.writeBytes(urlParameters);
+//        wr.flush();
+//        wr.close();
+// 
+//        int responseCode = con.getResponseCode();
+//        System.out.println("\nSending 'POST' request to URL : " + url);
+//        System.out.println("Post parameters : " + urlParameters);
+//        System.out.println("Response Code : " + responseCode);
+// 
+//        BufferedReader in = new BufferedReader(
+//                new InputStreamReader(con.getInputStream()));
+//        String inputLine;
+//        StringBuffer response = new StringBuffer();
+// 
+//        while ((inputLine = in.readLine()) != null) {
+//            response.append(inputLine);
+//        }
+//        in.close();
+// 
+//        //print result
+//        System.out.println(response.toString());
+// 
+//    }
+
 }
 
+    private static googlecred()
+    {
+        
+
+    }
