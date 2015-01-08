@@ -30,6 +30,25 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
  
 import com.google.common.collect.ImmutableMap;
+
+//Used for pretty printing xml
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.sax.SAXSource;
+import javax.xml.transform.sax.SAXTransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+
+//URL libraries
+import java.net.HttpURLConnection;
+import javax.net.ssl.HttpsURLConnection;
+import java.net.URL;
+import java.io.*;
+import java.util.Scanner;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+import org.xml.sax.InputSource;
  
  
 public class GoogleOauthServer {
@@ -125,12 +144,36 @@ public class GoogleOauthServer {
    req.getSession().setAttribute("access_token", accessToken);
     
    // get some info about the user with the access token
-   String json = get(new StringBuilder("https://www.googleapis.com/oauth2/v1/userinfo?access_token=").append(accessToken).toString());
+   //String json = get(new StringBuilder("https://www.googleapis.com/oauth2/v1/userinfo?access_token=").append(accessToken).toString());
+   //Gmail Atom Inbox Feed
+   //String json = get(new StringBuilder("https://mail.google.com/mail/feed/atom/oauth2/v1/userinfo?access_token=").append(accessToken).toString());
+   //String json = get(new StringBuilder("https://mail.google.com/mail/feed/atom"));
     
    // now we could store the email address in session
     
    // return the json of the user's basic info
-   resp.getWriter().println(json);
+   //resp.getWriter().println(json);
+   URL url = new URL("http://mail.google.com/mail/feed/atom/");
+   //Step 1: Open the connection
+   HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+   connection.setInstanceFollowRedirects(false);
+   connection.addRequestProperty("Authorization", "Bearer " + accessToken);
+   connection.connect();
+
+   //Checks for a bug which old APIs have where they will try to redirect you
+   //to a different page
+   if (connection.getResponseCode() == 302)
+   { 
+       resp.getWriter().println("We caught the redirect 302 code!");
+   BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+   String line = "";
+   String xml = "";
+   while ((line = reader.readLine()) != null) {
+       xml += line;
+   }
+   //resp.getWriter().print(formatXml(xml));
+   resp.getWriter().print(xml);
+  }
   }
  }
   
@@ -168,4 +211,22 @@ public class GoogleOauthServer {
  
      return body;
  }
+
+ private static String formatXml(String xml){
+         try{
+             Transformer serializer= SAXTransformerFactory.newInstance().newTransformer();
+             serializer.setOutputProperty(OutputKeys.INDENT, "yes");
+             //serializer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+             serializer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+             //serializer.setOutputProperty("{http://xml.customer.org/xslt}indent-amount", "2");
+             Source xmlSource=new SAXSource(new InputSource(new ByteArrayInputStream(xml.getBytes())));
+             StreamResult res =  new StreamResult(new ByteArrayOutputStream());            
+             serializer.transform(xmlSource, res);
+             return new String(((ByteArrayOutputStream)res.getOutputStream()).toByteArray());
+         }catch(Exception e){
+             //TODO log error
+             return xml;
+         }
+     }
+
 }
