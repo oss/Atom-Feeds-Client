@@ -9,5 +9,6 @@ How to compile for the first time:
 mvn clean validate compile package
 
 How to run the program:
-mvn exec:java
+mvn compile exec:java -Dexec.classpathScope=compile
+ -Dlog4j.configuration=file:./src/main/resources/log4j.properties
 
