@@ -153,27 +153,39 @@ public class GoogleOauthServer {
     
    // return the json of the user's basic info
    //resp.getWriter().println(json);
-   URL url = new URL("http://mail.google.com/mail/feed/atom/");
+   URL url = new URL("https://mail.google.com/mail/feed/atom/");
    //Step 1: Open the connection
    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-   connection.setInstanceFollowRedirects(false);
-   connection.addRequestProperty("Authorization", "Bearer " + accessToken);
+   //connection.setInstanceFollowRedirects(false);
+   //connection.addRequestProperty("Authorization", "Bearer " + accessToken);
+   connection.setRequestProperty("Authorization", "Bearer " + accessToken);
    connection.connect();
 
    //Checks for a bug which old APIs have where they will try to redirect you
    //to a different page
+
    if (connection.getResponseCode() == 302)
    { 
        resp.getWriter().println("We caught the redirect 302 code!");
-   BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-   String line = "";
-   String xml = "";
-   while ((line = reader.readLine()) != null) {
-       xml += line;
+       BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+       String line = "";
+       String xml = "";
+       while ((line = reader.readLine()) != null) {
+           xml += line;
+       }
+       //resp.getWriter().print(formatXml(xml));
+       resp.getWriter().print(xml);
+   } else
+   {
+       BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+       String line = "";
+       String xml = "";
+       while ((line = reader.readLine()) != null) {
+           xml += line;
+       }
+       //resp.getWriter().print(formatXml(xml));
+       resp.getWriter().print(xml);
    }
-   //resp.getWriter().print(formatXml(xml));
-   resp.getWriter().print(xml);
-  }
   }
  }
   
