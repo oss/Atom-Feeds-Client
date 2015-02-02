@@ -1,3 +1,2 @@
 *.class
-*pom.properties
-*.jar
+Oauth-Maven-Project/oauth-app/target/*
