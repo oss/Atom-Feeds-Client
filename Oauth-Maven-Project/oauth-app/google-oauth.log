@@ -1585,3 +1585,72 @@
 [2015-01-15 13:33:08,508] [qtp1141164776-12] [DEBUG] [org.apache.http.wire] << "[\r][\n]" 
 [2015-01-15 13:33:08,508] [qtp1141164776-12] [DEBUG] [org.apache.http.impl.conn.BasicClientConnectionManager] Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@31ec634b 
 [2015-01-15 13:33:08,508] [qtp1141164776-12] [DEBUG] [org.apache.http.impl.conn.BasicClientConnectionManager] Connection can be kept alive indefinitely 
+[2015-02-02 15:03:44,581] [qtp133179823-17] [DEBUG] [org.apache.http.impl.conn.BasicClientConnectionManager] Get connection for route {s}->https://accounts.google.com 
+[2015-02-02 15:03:44,921] [qtp133179823-17] [DEBUG] [org.apache.http.impl.conn.DefaultClientConnectionOperator] Connecting to accounts.google.com:443 
+[2015-02-02 15:03:45,282] [qtp133179823-17] [DEBUG] [org.apache.http.client.protocol.RequestAddCookies] CookieSpec selected: best-match 
+[2015-02-02 15:03:45,338] [qtp133179823-17] [DEBUG] [org.apache.http.client.protocol.RequestAuthCache] Auth cache not set in the context 
+[2015-02-02 15:03:45,339] [qtp133179823-17] [DEBUG] [org.apache.http.client.protocol.RequestTargetAuthentication] Target auth state: UNCHALLENGED 
+[2015-02-02 15:03:45,340] [qtp133179823-17] [DEBUG] [org.apache.http.client.protocol.RequestProxyAuthentication] Proxy auth state: UNCHALLENGED 
+[2015-02-02 15:03:45,341] [qtp133179823-17] [DEBUG] [org.apache.http.impl.client.DefaultHttpClient] Attempt 1 to execute request 
+[2015-02-02 15:03:45,341] [qtp133179823-17] [DEBUG] [org.apache.http.impl.conn.DefaultClientConnection] Sending request: POST /o/oauth2/token HTTP/1.1 
+[2015-02-02 15:03:45,342] [qtp133179823-17] [DEBUG] [org.apache.http.wire] >> "POST /o/oauth2/token HTTP/1.1[\r][\n]" 
+[2015-02-02 15:03:45,360] [qtp133179823-17] [DEBUG] [org.apache.http.wire] >> "Content-Length: 296[\r][\n]" 
+[2015-02-02 15:03:45,360] [qtp133179823-17] [DEBUG] [org.apache.http.wire] >> "Content-Type: application/x-www-form-urlencoded[\r][\n]" 
+[2015-02-02 15:03:45,360] [qtp133179823-17] [DEBUG] [org.apache.http.wire] >> "Host: accounts.google.com[\r][\n]" 
+[2015-02-02 15:03:45,361] [qtp133179823-17] [DEBUG] [org.apache.http.wire] >> "Connection: Keep-Alive[\r][\n]" 
+[2015-02-02 15:03:45,361] [qtp133179823-17] [DEBUG] [org.apache.http.wire] >> "User-Agent: Apache-HttpClient/4.2.1 (java 1.5)[\r][\n]" 
+[2015-02-02 15:03:45,361] [qtp133179823-17] [DEBUG] [org.apache.http.wire] >> "[\r][\n]" 
+[2015-02-02 15:03:45,361] [qtp133179823-17] [DEBUG] [org.apache.http.headers] >> POST /o/oauth2/token HTTP/1.1 
+[2015-02-02 15:03:45,362] [qtp133179823-17] [DEBUG] [org.apache.http.headers] >> Content-Length: 296 
+[2015-02-02 15:03:45,362] [qtp133179823-17] [DEBUG] [org.apache.http.headers] >> Content-Type: application/x-www-form-urlencoded 
+[2015-02-02 15:03:45,363] [qtp133179823-17] [DEBUG] [org.apache.http.headers] >> Host: accounts.google.com 
+[2015-02-02 15:03:45,363] [qtp133179823-17] [DEBUG] [org.apache.http.headers] >> Connection: Keep-Alive 
+[2015-02-02 15:03:45,363] [qtp133179823-17] [DEBUG] [org.apache.http.headers] >> User-Agent: Apache-HttpClient/4.2.1 (java 1.5) 
+[2015-02-02 15:03:45,364] [qtp133179823-17] [DEBUG] [org.apache.http.wire] >> "code=4%2FiVPK6m53MUtwyjTmAzwZTEoF9dyROtkobd3F21EM4kc.cpGYKrU5ySoZJvIeHux6iLadDcyXlgI&client_id=435470233754-stim0j9rfrilnldf0fhmia40b665icu3.apps.googleusercontent.com&client_secret=r84Yl_8RuDWMo9_JK95r9Z1q&redirect_uri=http%3A%2F%2Flocalhost%3A8089%2Foauth2callback&grant_type=authorization_code" 
+[2015-02-02 15:03:45,461] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "HTTP/1.1 200 OK[\r][\n]" 
+[2015-02-02 15:03:45,465] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "Content-Type: application/json; charset=utf-8[\r][\n]" 
+[2015-02-02 15:03:45,466] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]" 
+[2015-02-02 15:03:45,466] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "Pragma: no-cache[\r][\n]" 
+[2015-02-02 15:03:45,468] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "Expires: Fri, 01 Jan 1990 00:00:00 GMT[\r][\n]" 
+[2015-02-02 15:03:45,468] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "Date: Mon, 02 Feb 2015 20:03:43 GMT[\r][\n]" 
+[2015-02-02 15:03:45,469] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "Content-Disposition: attachment; filename="json.txt"; filename*=UTF-8''json.txt[\r][\n]" 
+[2015-02-02 15:03:45,469] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "X-Content-Type-Options: nosniff[\r][\n]" 
+[2015-02-02 15:03:45,469] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "X-Frame-Options: SAMEORIGIN[\r][\n]" 
+[2015-02-02 15:03:45,470] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "X-XSS-Protection: 1; mode=block[\r][\n]" 
+[2015-02-02 15:03:45,470] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "Server: GSE[\r][\n]" 
+[2015-02-02 15:03:45,470] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "Alternate-Protocol: 443:quic,p=0.02[\r][\n]" 
+[2015-02-02 15:03:45,470] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "Accept-Ranges: none[\r][\n]" 
+[2015-02-02 15:03:45,471] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "Vary: Accept-Encoding[\r][\n]" 
+[2015-02-02 15:03:45,471] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "Transfer-Encoding: chunked[\r][\n]" 
+[2015-02-02 15:03:45,471] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "[\r][\n]" 
+[2015-02-02 15:03:45,478] [qtp133179823-17] [DEBUG] [org.apache.http.impl.conn.DefaultClientConnection] Receiving response: HTTP/1.1 200 OK 
+[2015-02-02 15:03:45,479] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << HTTP/1.1 200 OK 
+[2015-02-02 15:03:45,481] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << Content-Type: application/json; charset=utf-8 
+[2015-02-02 15:03:45,486] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << Cache-Control: no-cache, no-store, max-age=0, must-revalidate 
+[2015-02-02 15:03:45,486] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << Pragma: no-cache 
+[2015-02-02 15:03:45,501] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << Expires: Fri, 01 Jan 1990 00:00:00 GMT 
+[2015-02-02 15:03:45,501] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << Date: Mon, 02 Feb 2015 20:03:43 GMT 
+[2015-02-02 15:03:45,501] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << Content-Disposition: attachment; filename="json.txt"; filename*=UTF-8''json.txt 
+[2015-02-02 15:03:45,501] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << X-Content-Type-Options: nosniff 
+[2015-02-02 15:03:45,501] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << X-Frame-Options: SAMEORIGIN 
+[2015-02-02 15:03:45,504] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << X-XSS-Protection: 1; mode=block 
+[2015-02-02 15:03:45,504] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << Server: GSE 
+[2015-02-02 15:03:45,504] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << Alternate-Protocol: 443:quic,p=0.02 
+[2015-02-02 15:03:45,504] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << Accept-Ranges: none 
+[2015-02-02 15:03:45,504] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << Vary: Accept-Encoding 
+[2015-02-02 15:03:45,505] [qtp133179823-17] [DEBUG] [org.apache.http.headers] << Transfer-Encoding: chunked 
+[2015-02-02 15:03:45,548] [qtp133179823-17] [DEBUG] [org.apache.http.impl.client.DefaultHttpClient] Connection can be kept alive indefinitely 
+[2015-02-02 15:03:45,593] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "3c4[\r][\n]" 
+[2015-02-02 15:03:45,601] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "{[\n]" 
+[2015-02-02 15:03:45,603] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "  "access_token" : "ya29.DgFQHV2jepRiIvzIpNQTQaVOI8sBqnILLXJgU24EsMNZKaVdXgOTZgWGJt4H2ZFNLUhiQkJKaGSBMg",[\n]" 
+[2015-02-02 15:03:45,618] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "  "token_type" : "Bearer",[\n]" 
+[2015-02-02 15:03:45,619] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "  "expires_in" : 3600,[\n]" 
+[2015-02-02 15:03:45,621] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "  "id_token" : "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNjMzJkY2Q2NTQ0NjMwOGYyNDlhNjhmNmQ3ZGU4ZTU1ZWY1MGE5NzQifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwic3ViIjoiMTA2ODE4NzE2MjAyNzI2NDYzMzc5IiwiYXpwIjoiNDM1NDcwMjMzNzU0LXN0aW0wajlyZnJpbG5sZGYwZmhtaWE0MGI2NjVpY3UzLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiZW1haWwiOiJyZW5pc2htYXR0YUBnbWFpbC5jb20iLCJhdF9oYXNoIjoibXcyNE1OVVlpSDk2V0tnazE1dUtyUSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdWQiOiI0MzU0NzAyMzM3NTQtc3RpbTBqOXJmcmlsbmxkZjBmaG1pYTQwYjY2NWljdTMuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJpYXQiOjE0MjI5MDcxMjMsImV4cCI6MTQyMjkxMTAyM30.mVzpqvqK4qsxn2tuvpsSd1r5G3ZvxfVuqackFr4OASGEk4dD3WBJKH5Xnt5fV0OwOTMXB2DrhTJwRz4jYLM1GxT4CCqRhn78ee-Ed1t8hKs1U0DRKuVmN9Gf9X_" 
+[2015-02-02 15:03:45,645] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "1dA-A5snZsrjHoHGUS7Us6eLd4wn_6Om4ak_lPIc9Oa9028w",[\n]" 
+[2015-02-02 15:03:45,647] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "  "refresh_token" : "1/kZ3iH89POM6li-qmlEdEiiyUddWfuEwJuDhfo9jPlFg"[\n]" 
+[2015-02-02 15:03:45,650] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "}" 
+[2015-02-02 15:03:45,650] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "[\r][\n]" 
+[2015-02-02 15:03:45,651] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "0[\r][\n]" 
+[2015-02-02 15:03:45,651] [qtp133179823-17] [DEBUG] [org.apache.http.wire] << "[\r][\n]" 
+[2015-02-02 15:03:45,652] [qtp133179823-17] [DEBUG] [org.apache.http.impl.conn.BasicClientConnectionManager] Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@44baef67 
+[2015-02-02 15:03:45,661] [qtp133179823-17] [DEBUG] [org.apache.http.impl.conn.BasicClientConnectionManager] Connection can be kept alive indefinitely 
