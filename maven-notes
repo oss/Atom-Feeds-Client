@@ -1,2 +1,27 @@
 Create a new Java project
     $ mvn archetype:generate
+
+Generate maven project archetype for webapp:
+    $ mvn archetype:generate -DgroupId=com.oss \
+                       -DartifactId=name-of-project \
+                       -Dversion=1.0-SNAPSHOT \
+                       -DarchetypeArtifactId=maven-archetype-webapp \
+                       -DinteractiveMode=false 
+
+web.xml skeleton for Servlet 2.5 web application
+    <?xml version="1.0" encoding="UTF-8"?>
+    <web-app xmlns="http://java.sun.com/xml/ns/javaee"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+      version="2.5">
+      <display-name>Archetype Created Web Application</display-name>
+    </web-app>
+ 
+How To Setup Tomcat:
+(http://www.mkyong.com/maven/how-to-deploy-maven-based-war-file-to-tomcat/)
+    tomcat path: /usr/share/tomcat
+    maven path:  /usr/share/maven
+
+How to Start Tomcat on Fedora:
+    sudo systemctl enable tomcat.service
+    sudo systemctl start tomcat.service

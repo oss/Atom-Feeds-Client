@@ -4,6 +4,7 @@ Atom-Feeds-Client
 Requires:
 openjdk-7
 maven 3.2.5
+tomcat > 7.054
 
 How to compile for the first time:
 mvn clean validate compile package
