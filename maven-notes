@@ -25,3 +25,10 @@ How To Setup Tomcat:
 How to Start Tomcat on Fedora:
     sudo systemctl enable tomcat.service
     sudo systemctl start tomcat.service
+
+How to Make Tomcat listen on Port 8089:
+    1. Edit /usr/share/tomcat/conf/server.xml
+        - edit "port" field in connector tag
+        <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1"
+        redirectPort="8443"/>
+
