@@ -32,3 +32,20 @@ How to Make Tomcat listen on Port 8089:
         <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1"
         redirectPort="8443"/>
 
+Install Tomcat manually following this guide:
+    http://www.davidghedini.com/pg/entry/install_tomcat_7_on_centos
+    - Location of java jdk:
+    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.31-3.b13.fc21.x86_64/jre/bin
+
+Tomcat Service Commands:
+    sudo service tomcat start
+    sudo service tomcat stop
+    sudo service tomcat restart
+
+URL for where Tomcat serves project:
+    http://localhost:8080/OAuth2v1
+
+Maven command to run tomcat + deploy war package:
+    mvn tomcat:run
+
+
