@@ -1,1 +1,2 @@
 *.class
+Oauth-Maven-Project/oauth-app/target/*
